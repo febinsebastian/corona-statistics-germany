@@ -1,0 +1,30 @@
+<div class="card indicator-box mt-2" (click)="onSelect()" @fade>
+    <div class="card-body" 
+        [ngClass]="{'selected':coronaStateData.abbreviation == selectedCountyAbbreviation}">
+        <div class="row">
+            <!--<div class="col-sm-3">
+               <fa-icon [icon]="faCoffee" size="3x"></fa-icon>
+            </div>-->
+            <div class="col-sm-12">
+                <h2 class="text-center mt-2">{{ coronaStateData.name }}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <p>Cases</p>
+                <p class="fw-bold text-secondary">{{ coronaStateData.cases }}</p>
+                <p class="text-secondary delta-text">+ {{ coronaStateData.delta.cases }}</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <p>Deaths</p>
+                <p class="fw-bold text-danger">{{ coronaStateData.deaths }}</p>
+                <p class="text-danger delta-text">+ {{ coronaStateData.delta.deaths }}</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <p>Recovered</p>
+                <p class="fw-bold text-success">{{ coronaStateData.recovered }}</p>
+                <p class="text-success delta-text">+ {{ coronaStateData.delta.deaths }}</p>
+            </div>
+        </div>
+    </div>
+</div>

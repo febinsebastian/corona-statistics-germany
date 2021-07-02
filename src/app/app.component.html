@@ -1,0 +1,51 @@
+<mat-toolbar>
+    <a *ngIf="sidenav.mode == 'over'" (click)="sidenav.toggle()">
+        <fa-icon [icon]="faBars" size="2x" *ngIf="!sidenav.opened"></fa-icon>
+        <fa-icon [icon]="faTimes" size="2x" *ngIf="sidenav.opened"></fa-icon>
+    </a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/SARS-CoV-2_without_background.png" alt="logo" style="width:4rem;">
+    <span>Coronavirus Statistics in Germany</span>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+        <app-indicator (click)="getWeekStatistics(state)" 
+            *ngFor="let state of coronaData" 
+            [coronaStateData]="state"
+            [selectedCountyAbbreviation]="currentCounty">
+        </app-indicator>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="container mt-2 content" *ngIf="!isLoading" @fade>
+            <div class="row" *ngIf="error">
+                <div class="alert alert-danger">
+                    <h1>An Error Occurred!</h1>
+                    <p>{{ error }}</p>
+                </div>
+            </div>
+            <div class="row" *ngIf="!error">
+                <div class="col-sm-12 text-right">
+                    <span class="mt-2 week-range">{{startDay | date:'dd.MMM' }} - {{endDay | date:'dd.MMM.yyy' }}</span>
+                    <a [disabled]="currentDays==21" (click)="changeWeek('prev')"><fa-icon [icon]="faChevronLeft" size="2x"></fa-icon></a>
+                    <a [disabled]="currentDays==7" (click)="changeWeek('next')"><fa-icon [icon]="faChevronRight" size="2x"></fa-icon></a>
+                </div>
+                <div>
+                    <app-week-statistics [weekStatisticsData]="week"></app-week-statistics>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<!--<app-header></app-header>
+<div class="loader" *ngIf ="isLoading && !error"></div>
+<div *ngIf ="coronaData.length >=1">
+    <aside class="sidebar">
+        <app-indicator (click)="getWeekStatistics(state)" 
+            *ngFor="let state of coronaData" 
+            [coronaStateData]="state"
+            [selectedCountyAbbreviation]="currentCounty">
+        </app-indicator>
+    </aside>
+</div>
+<main class="page">
+    
+</main>-->

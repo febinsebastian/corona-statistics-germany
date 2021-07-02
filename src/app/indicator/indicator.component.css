@@ -1,0 +1,24 @@
+.indicator-box {
+    box-shadow: 0 4px 10px rgb(0 29 54 / 4%);
+    border-radius: 6px !important;
+    border: none !important;
+    cursor: pointer;
+}
+.indicator-box .card-body {
+    padding: .5rem .5rem;
+}
+.indicator-box h5{
+    font-weight: 600;
+}
+.indicator-box:hover {
+    background-color: #e4e4e4;
+    transition: 1s;
+}
+.selected {
+    border-radius: 6px !important;
+    border: 1px solid #e2e0e0 !important;
+    background-color: #e2e0e0;
+}
+.delta-text {
+    font-size: .8rem;
+}

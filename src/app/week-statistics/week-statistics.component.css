@@ -1,0 +1,57 @@
+.card {
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+    border-radius: 6px !important;
+    border: none !important;
+    margin-bottom: 1rem;
+}
+.recovered fa-icon {
+    color: #198754;
+}
+.card-body fa-icon {
+    width: 50%;
+}
+.card-body p {
+    float: right;
+    width: 50%;
+    font-size: 3rem;
+    font-weight: 600;
+}
+@media only screen and (min-width: 800px) {
+    .card-body-wrapper {
+        position: relative;
+    }
+    .card-body-wrapper .card-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        text-align: center;
+    }
+  }
+
+.card-body h5 {
+    margin-top: 1rem; 
+}
+.flag {
+    width: 6.6rem;
+    height: 6rem;
+    margin-right: 1em;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.flag img {
+    background: none !important;
+    border: none !important;
+}
+.county-title-wrapper {
+    position: relative;
+}
+.county-title {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
