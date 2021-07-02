@@ -1,64 +1,60 @@
 
-<div class="row county-title-wrapper">
-    <div class="col-lg-6 col-sm-5 flag">
+<div class="county-title-wrapper">
+    <div class="flag">
         <img src="{{weekStatisticsData.flageImg}}" alt="flag" class="img-thumbnail">
     </div>
-    <div class="col-lg-6 col-sm-7 text-center">
-        <h3 class="county-title">{{ weekStatisticsData.countyName }}</h3>
+    <div>
+        <h3 class="county-title">{{ weekStatisticsData.name }}</h3>
     </div>
 </div>
 <div class="row mt-4">
     <div class="col-lg-4 col-sm-12">
-    <div class="card">
-        <div class="card-body card-body-wrapper">
+    <div class="card-box">
+        <div>
             <fa-icon [icon]="faUsers" size="3x"></fa-icon>
-            <p class="card-text text-danger">{{weekStatisticsData.cases}}</p>
             <h2 class="card-title">Cases</h2>
         </div>
+        <div style="flex-grow: 8">
+            <p class="card-text text-danger">{{weekStatisticsData.cases}}</p>
+        </div>
     </div>
     </div>
     <div class="col-lg-4 col-sm-12">
-        <div class="card">
-            <div class="card-body card-body-wrapper">
+        <div class="card-box">
+            <div>
                 <fa-icon [icon]="faRibbon" size="3x"></fa-icon>
-                <p class="card-text">{{weekStatisticsData.deaths}}</p>
                 <h2 class="card-title">Deaths</h2>
+            </div>
+            <div style="flex-grow: 8">
+                <p class="card-text">{{weekStatisticsData.deaths}}</p>
             </div>
         </div>
     </div>
     <div class="col-lg-4 col-sm-12">
-        <div class="card">
-            <div class="card-body card-body-wrapper recovered">
+        <div class="card-box">
+            <div class="recovered">
                 <fa-icon [icon]="faHeart" size="3x"></fa-icon>
-                <p class="card-text text-success">{{weekStatisticsData.recovered}}</p>
                 <h2 class="card-title">Recovered</h2>
+            </div>
+            <div style="flex-grow: 8">
+                <p class="card-text text-success">{{weekStatisticsData.recovered}}</p>
             </div>
         </div>
     </div>
 </div>
 <div class="row mt-4">
-    <div class="col-lg-6 col-sm-12">
+    <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title">Deaths</h2>
+                <h2 class="card-title">Cases</h2>
                 <ngx-charts-bar-vertical 
                     [results]="weekStatisticsData.chartData" 
                     [xAxis]="true" 
                     [yAxis]="true"
-                    [view]="[300, 350]">
-                </ngx-charts-bar-vertical>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-sm-12">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Deaths</h2>
-                <ngx-charts-bar-vertical 
-                    [results]="weekStatisticsData.chartData" 
-                    [xAxis]="true" 
-                    [yAxis]="true"
-                    [view]="[300, 350]">
+                    [showXAxisLabel]="true"
+                    [showYAxisLabel]="true"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
                 </ngx-charts-bar-vertical>
             </div>
         </div>

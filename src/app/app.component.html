@@ -23,10 +23,10 @@
                 </div>
             </div>
             <div class="row" *ngIf="!error">
-                <div class="col-sm-12 text-right">
-                    <span class="mt-2 week-range">{{startDay | date:'dd.MMM' }} - {{endDay | date:'dd.MMM.yyy' }}</span>
-                    <a [disabled]="currentDays==21" (click)="changeWeek('prev')"><fa-icon [icon]="faChevronLeft" size="2x"></fa-icon></a>
-                    <a [disabled]="currentDays==7" (click)="changeWeek('next')"><fa-icon [icon]="faChevronRight" size="2x"></fa-icon></a>
+                <div class="col-sm-12 week-range">
+                    <span class="mt-2">{{startDay | date:'dd.MMM' }} - {{endDay | date:'dd.MMM.yyy' }}</span>
+                    <a [class.disabled]="currentDays==21" (click)="changeWeek('prev')"><fa-icon [icon]="faChevronLeft" size="2x"></fa-icon></a>
+                    <a [class.disabled]="currentDays==7" (click)="changeWeek('next')"><fa-icon [icon]="faChevronRight" size="2x"></fa-icon></a>
                 </div>
                 <div>
                     <app-week-statistics [weekStatisticsData]="week"></app-week-statistics>

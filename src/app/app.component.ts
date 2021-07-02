@@ -58,6 +58,7 @@ export class AppComponent implements OnInit{
     })
   }
   getWeekStatistics(county){
+    console.log(county.name);
     let days = this.currentDays; 
     this.week = new Statistic(0, 0, 0, county.name, county.abbreviation,
                 flages[county.abbreviation]['flagImg'], []);
@@ -72,7 +73,6 @@ export class AppComponent implements OnInit{
         chartArray.push({name:this.formatDate(history[key]['date']), value: history[key]['cases']})
       }
       this.week.chartData = chartArray;
-      console.log(this.week.chartData);
       this.isLoading = false;
       this.startDay = history[0].date;
       this.endDay = history[history.length-1].date;
@@ -103,7 +103,7 @@ export class AppComponent implements OnInit{
   }
 
   changeWeek(selection) {
-    console.log(this.week);
+    console.log(this.week)
     if(selection == 'prev'){
       this.currentDays += 7;
       this.getWeekStatistics(this.week)

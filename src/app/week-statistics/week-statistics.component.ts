@@ -15,6 +15,8 @@ export class WeekStatisticsComponent implements OnInit {
   faUsers = faUsers;
   faHeart = faHeart;
   faRibbon = faRibbon;
+  xAxisLabel = 'Number Of Cases';
+  yAxisLabel = 'Day';
   constructor() { }
 
   ngOnInit(): void {

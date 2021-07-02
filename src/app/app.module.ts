@@ -9,7 +9,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
 import { IndicatorComponent } from './indicator/indicator.component';
-import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeekStatisticsComponent } from './week-statistics/week-statistics.component';
 
@@ -17,7 +16,6 @@ import { WeekStatisticsComponent } from './week-statistics/week-statistics.compo
   declarations: [
     AppComponent,
     IndicatorComponent,
-    HeaderComponent,
     WeekStatisticsComponent
   ],
   imports: [

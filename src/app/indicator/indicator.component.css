@@ -8,6 +8,7 @@
     padding: .5rem .5rem;
 }
 .indicator-box h5{
+    margin: .3rem;
     font-weight: 600;
 }
 .indicator-box:hover {

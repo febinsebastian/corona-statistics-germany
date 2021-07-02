@@ -1,36 +1,5 @@
-.card {
-    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
-    border-radius: 6px !important;
-    border: none !important;
-    margin-bottom: 1rem;
-}
 .recovered fa-icon {
     color: #198754;
-}
-.card-body fa-icon {
-    width: 50%;
-}
-.card-body p {
-    float: right;
-    width: 50%;
-    font-size: 3rem;
-    font-weight: 600;
-}
-@media only screen and (min-width: 800px) {
-    .card-body-wrapper {
-        position: relative;
-    }
-    .card-body-wrapper .card-text {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0;
-        text-align: center;
-    }
-  }
-
-.card-body h5 {
-    margin-top: 1rem; 
 }
 .flag {
     width: 6.6rem;
@@ -44,14 +13,41 @@
 .flag img {
     background: none !important;
     border: none !important;
+    object-fit: cover;
+    height: 90%;
 }
 .county-title-wrapper {
-    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.county-body-wrapper div {
+    text-align: center;
 }
 .county-title {
     font-size: 2rem !important;
     font-weight: 600 !important;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+}
+@media only screen and (max-width: 800px) {
+    .county-title {
+        font-size: 1.6rem !important;
+    }
+}
+.card-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+    border-radius: 6px !important;
+    border: none !important;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.card-box .card-text {
+    font-size: 3rem;
+    font-weight: 600;
+}
+.card-box .card-title {
+    margin-top: .5rem;
+}
