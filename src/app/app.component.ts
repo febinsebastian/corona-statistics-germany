@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpService } from './http.service';
 import { fade } from './animate';
 import { flages } from './static/flages';
-import { Statistic } from './statistics';
+import { Statistic } from './statistics.model';
 import { faChevronLeft, faChevronRight, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -16,7 +16,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 })
 export class AppComponent implements OnInit{
   @ViewChild(MatSidenav) sidenav: MatSidenav;
-  coronaData = [];
+  coronaStatesData = [];
   flages = flages;
   faChevronLeft = faChevronLeft;
   faChevronRight = faChevronRight;
@@ -36,9 +36,9 @@ export class AppComponent implements OnInit{
     this.isLoading = true;
     this.httpService.httpGet('states').subscribe(response =>{
       for (const key in response[0]){
-        this.coronaData.push(response[0][key])
+        this.coronaStatesData.push(response[0][key])
       }
-      this.getWeekStatistics(this.coronaData[0])
+      this.getWeekStatistics(this.coronaStatesData[0])
       this.isLoading = false;
     }, error =>{
       this.isLoading = false;
@@ -58,7 +58,6 @@ export class AppComponent implements OnInit{
     })
   }
   getWeekStatistics(county){
-    console.log(county.name);
     let days = this.currentDays; 
     this.week = new Statistic(0, 0, 0, county.name, county.abbreviation,
                 flages[county.abbreviation]['flagImg'], []);
@@ -103,7 +102,6 @@ export class AppComponent implements OnInit{
   }
 
   changeWeek(selection) {
-    console.log(this.week)
     if(selection == 'prev'){
       this.currentDays += 7;
       this.getWeekStatistics(this.week)

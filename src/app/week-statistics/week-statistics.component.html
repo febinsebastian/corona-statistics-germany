@@ -9,13 +9,13 @@
 </div>
 <div class="row mt-4">
     <div class="col-lg-4 col-sm-12">
-    <div class="card-box">
+    <div class="card-box cases">
         <div>
             <fa-icon [icon]="faUsers" size="3x"></fa-icon>
             <h2 class="card-title">Cases</h2>
         </div>
         <div style="flex-grow: 8">
-            <p class="card-text text-danger">{{weekStatisticsData.cases}}</p>
+            <p class="card-text">{{weekStatisticsData.cases}}</p>
         </div>
     </div>
     </div>
@@ -31,13 +31,13 @@
         </div>
     </div>
     <div class="col-lg-4 col-sm-12">
-        <div class="card-box">
-            <div class="recovered">
+        <div class="card-box recovered">
+            <div>
                 <fa-icon [icon]="faHeart" size="3x"></fa-icon>
                 <h2 class="card-title">Recovered</h2>
             </div>
             <div style="flex-grow: 8">
-                <p class="card-text text-success">{{weekStatisticsData.recovered}}</p>
+                <p class="card-text">{{weekStatisticsData.recovered}}</p>
             </div>
         </div>
     </div>

@@ -1,5 +1,8 @@
-.recovered fa-icon {
-    color: #198754;
+.recovered fa-icon, .recovered .card-text {
+    color: #4bb543;
+}
+.cases fa-icon, .cases .card-text{
+    color: #9e150f;
 }
 .flag {
     width: 6.6rem;
@@ -30,7 +33,7 @@
 }
 @media only screen and (max-width: 800px) {
     .county-title {
-        font-size: 1.6rem !important;
+        font-size: 6vw !important;
     }
 }
 .card-box{

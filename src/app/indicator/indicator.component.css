@@ -12,13 +12,13 @@
     font-weight: 600;
 }
 .indicator-box:hover {
-    background-color: #e4e4e4;
+    background-color: #dce1e3;
     transition: 1s;
 }
 .selected {
     border-radius: 6px !important;
-    border: 1px solid #e2e0e0 !important;
-    background-color: #e2e0e0;
+    border: 1px solid #dce1e3 !important;
+    background-color: #dce1e3;
 }
 .delta-text {
     font-size: .8rem;

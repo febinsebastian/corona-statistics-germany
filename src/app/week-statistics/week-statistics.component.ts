@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { fade } from '../animate';
-import { flages } from '../static/flages';
 import { faUsers, faHeart, faRibbon } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -15,8 +14,8 @@ export class WeekStatisticsComponent implements OnInit {
   faUsers = faUsers;
   faHeart = faHeart;
   faRibbon = faRibbon;
-  xAxisLabel = 'Number Of Cases';
-  yAxisLabel = 'Day';
+  xAxisLabel = 'Day';
+  yAxisLabel = 'Number Of Cases';
   constructor() { }
 
   ngOnInit(): void {

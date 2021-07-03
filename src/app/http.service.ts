@@ -7,7 +7,7 @@ export class HttpService {
     constructor(private http: HttpClient) {}
 
     httpGet(url: string){
-        return this.http.get('http://api.corona-zahlen.org/'+url).pipe(map(responseData =>{
+        return this.http.get('https://api.corona-zahlen.org/'+url).pipe(map(responseData =>{
             const dataArray = [];
             for (const key in responseData) {
                 if(responseData.hasOwnProperty(key)){
