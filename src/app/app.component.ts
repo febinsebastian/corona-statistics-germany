@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
   faBars = faBars;
   faTimes = faTimes;
   currentDays: number = 7;
-  currentCounty: string = '';
+  currentState: string = '';
   isLoading: boolean = false;
   startDay : Date;
   endDay : Date;
@@ -57,15 +57,15 @@ export class AppComponent implements OnInit{
       }
     })
   }
-  getWeekStatistics(county){
+  getWeekStatistics(state){
     let days = this.currentDays; 
-    this.week = new Statistic(0, 0, 0, county.name, county.abbreviation,
-                flages[county.abbreviation]['flagImg'], []);
+    this.week = new Statistic(0, 0, 0, state.name, state.abbreviation,
+                flages[state.abbreviation]['flagImg'], []);
     this.error = null;
     this.isLoading = true;
-    this.currentCounty = county.abbreviation;
-    this.httpService.httpGet('states/'+this.currentCounty+'/history/cases/'+days).subscribe(response =>{
-      const history = response[0][this.currentCounty]['history'];
+    this.currentState = state.abbreviation;
+    this.httpService.httpGet('states/'+this.currentState+'/history/cases/'+days).subscribe(response =>{
+      const history = response[0][this.currentState]['history'];
       let chartArray = [];
       for (const key in history){
         this.week.cases += history[key]['cases'];
@@ -80,9 +80,9 @@ export class AppComponent implements OnInit{
       this.error = error.error.message;
     });
     
-    this.httpService.httpGet('states/'+this.currentCounty+'/history/deaths/'+days).subscribe(response =>{
-      for (const key in response[0][this.currentCounty]['history']){
-        this.week.deaths += response[0][this.currentCounty]['history'][key]['deaths'];
+    this.httpService.httpGet('states/'+this.currentState+'/history/deaths/'+days).subscribe(response =>{
+      for (const key in response[0][this.currentState]['history']){
+        this.week.deaths += response[0][this.currentState]['history'][key]['deaths'];
       }
       this.isLoading = false;
     }, error =>{
@@ -90,9 +90,9 @@ export class AppComponent implements OnInit{
       this.error = error.error.message;
     });
 
-    this.httpService.httpGet('states/'+this.currentCounty+'/history/recovered/'+days).subscribe(response =>{
-      for (const key in response[0][this.currentCounty]['history']){
-        this.week.recovered += response[0][this.currentCounty]['history'][key]['recovered'];
+    this.httpService.httpGet('states/'+this.currentState+'/history/recovered/'+days).subscribe(response =>{
+      for (const key in response[0][this.currentState]['history']){
+        this.week.recovered += response[0][this.currentState]['history'][key]['recovered'];
       }
       this.isLoading = false;
     }, error =>{

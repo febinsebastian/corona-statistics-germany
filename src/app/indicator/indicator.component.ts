@@ -9,12 +9,12 @@ import { fade } from '../animate';
 })
 export class IndicatorComponent implements OnInit {
   @Input() coronaStateData;
-  @Input() selectedCountyAbbreviation;
-  selectedCounty = new EventEmitter<Object>();
+  @Input() selectedStateAbbreviation;
+  selectedState = new EventEmitter<Object>();
   constructor() { }
 
   onSelect() {
-    this.selectedCounty.emit(this.coronaStateData);
+    this.selectedState.emit(this.coronaStateData);
   }
 
   ngOnInit(): void { }

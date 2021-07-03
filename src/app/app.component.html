@@ -11,7 +11,7 @@
         <app-indicator (click)="getWeekStatistics(state)" 
             *ngFor="let state of coronaStatesData" 
             [coronaStateData]="state"
-            [selectedCountyAbbreviation]="currentCounty">
+            [selectedStateAbbreviation]="currentState">
         </app-indicator>
     </mat-sidenav>
     <mat-sidenav-content>
