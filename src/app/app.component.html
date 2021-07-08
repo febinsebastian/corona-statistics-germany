@@ -15,22 +15,23 @@
         </app-indicator>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="container mt-2 content" *ngIf="!isLoading" @fade>
-            <div class="row" *ngIf="error">
-                <div class="col">
+        <div class="loader" *ngIf="isLoading"></div>
+        <div class="container mt-2 content"  @fade>
+            <div class="row" *ngIf="!isLoading">
+                <div class="col-sm-12" *ngIf="error">
                     <div class="alert alert-danger">
                         <h1>An Error Occurred!</h1>
                         <p>{{ error }}</p>
                     </div>
                 </div>
             </div>
-            <div class="row" *ngIf="!error">
+            <div class="row" *ngIf="!error || isLoading">
                 <div class="col-sm-12 week-range">
                     <span class="mt-2">{{startDay | date:'dd.MMM' }} - {{endDay | date:'dd.MMM.yyy' }}</span>
                     <a [class.disabled]="currentDays==21" (click)="changeWeek('prev')"><fa-icon [icon]="faChevronLeft" size="2x"></fa-icon></a>
                     <a [class.disabled]="currentDays==7" (click)="changeWeek('next')"><fa-icon [icon]="faChevronRight" size="2x"></fa-icon></a>
                 </div>
-                <div>
+                <div class="col-sm-12">
                     <app-week-statistics [weekStatisticsData]="week"></app-week-statistics>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 .loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #5C5F58; /* Blue */
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #5C5F58;
     border-radius: 50%;
     left: 50%;
     width: 120px;
@@ -78,6 +78,9 @@ mat-toolbar span{
 }
 .week-range a {
   cursor: pointer;
+}
+.alert {
+  margin-bottom: 5rem;
 }
 @media only screen and (max-width: 800px) {
   .week-range {
