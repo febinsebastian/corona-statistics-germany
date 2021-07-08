@@ -14,9 +14,15 @@ export class WeekStatisticsComponent implements OnInit {
   faUsers = faUsers;
   faHeart = faHeart;
   faRibbon = faRibbon;
-  xAxisLabel = 'Day';
-  yAxisLabel = 'Number Of Cases';
+  xAxisLabel:string = 'Day';
+  yAxisLabel:string = 'Number Of Cases';
+  view: any = []
+  
   constructor() { }
+
+  onResize(event) {
+    this.view = [event.target.innerWidth / 1.35, 400];
+  }
 
   ngOnInit(): void {
   }

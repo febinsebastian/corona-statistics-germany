@@ -22,7 +22,7 @@
   color: #6c757d !important;
 }
 mat-sidenav {
-  width: 18rem;
+  width: 25%;
   position: fixed;
   z-index: 10;
   margin: 0;
@@ -51,15 +51,18 @@ mat-sidenav {
 .week-range span + a {
   margin: 1rem;
 }
-.week-range fa-icon {
+fa-icon, .week-range fa-icon {
   color: #000;
 }
 .content {
-  margin: 2rem;
   margin-left: 0;
 }
 mat-sidenav-content {
   top: 3.6rem;
+  margin-left: 26% !important;
+}
+mat-sidenav + div{
+  overflow: hidden !important;
 }
 mat-toolbar {
   position: fixed;
@@ -92,5 +95,11 @@ mat-toolbar span{
   }
   mat-toolbar span{
     font-size: 5vw;
+  }
+  mat-sidenav-content {
+    margin-left: 0 !important;
+  }
+  mat-sidenav {
+    width: 75%;
   }
 }

@@ -16,7 +16,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 })
 export class AppComponent implements OnInit{
   @ViewChild(MatSidenav) sidenav: MatSidenav;
-  coronaStatesData = [];
+  coronaStatesData:any = [];
   flages = flages;
   faChevronLeft = faChevronLeft;
   faChevronRight = faChevronRight;
@@ -116,6 +116,6 @@ export class AppComponent implements OnInit{
     const day = date.toLocaleString('default', { day: '2-digit' });
     const month = date.toLocaleString('default', { month: 'short' });
     return day + '-' + month;
-}
+  }
   
 }

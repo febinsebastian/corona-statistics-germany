@@ -55,3 +55,13 @@
 .card-box .card-title {
     margin-top: .5rem;
 }
+.chart-card .card-body {
+    padding: 0 0 4rem 0;
+}
+.chart-card .card-title {
+    margin-left: 1rem;
+}
+.chart-card {
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+    border: none;
+}
